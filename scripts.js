@@ -51,6 +51,7 @@ const Transaction = {
     remove(index){
         Transaction.all.splice(index, 1)
         App.reload()
+        
     },
     
     
@@ -166,9 +167,9 @@ const DOM = {
 const Utils = {
 
     formatAmount(value){
-        value = Number(value) * 100
+       value = value * 100
         
-        return value
+        return Math.round(value)
     },
     formatDate(date){
         const splitteDate = date.split("-")
@@ -227,14 +228,14 @@ const Form = {
     formatValues () {
         let { description, amount, date } = Form.getValues()
 
-        console.log(description)
+        //console.log(description)
 
         amount = Utils.formatAmount(amount)
-        console.log(amount)
+        //console.log(amount)
 
 
         date = Utils.formatDate(date)
-        console.log(date)
+        //console.log(date)
 
         return{
             description,
@@ -307,6 +308,18 @@ const App = {
         App.init()
     },
 }
+const Apagar = {  
+    //pegar todos os transactions
+    //remover todas as transactions
+    remove(index){
+        Transaction.all.splice(index)
+        App.reload()
+        
+    }  
+}
+
+
+
 
 App.init()
 

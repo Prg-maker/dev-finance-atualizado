@@ -19,9 +19,13 @@
 
     <header >
         <img src="./assets/logo.svg" alt="Logo Dev Finance">
+        
     </header>
 
     <main class="container">
+
+
+
 
         <section id="balance">
 
@@ -55,6 +59,8 @@
                 <p id="totalDisplay"></p>
             </div>
 
+            
+
 
         </section>
 
@@ -63,6 +69,9 @@
             <h2 class="sr-only">Transações</h2>
 
             <a href="#" class="button new" onclick="Modal.open()">+ Nova Transações</a>
+            
+            <p class="button new delete" onclick="Apagar.remove()">- Apagar todas as transações</p>
+            
 
             <table id="data-table">
                 <thead>
@@ -73,10 +82,12 @@
                         <th></th>
                     </tr>
                 </thead>
-
-                <tbody>
+            
+                <tbody id="content">
                     
                 </tbody>
+                
+                
             </table>
         </section>
     </main>
@@ -119,7 +130,9 @@
    
     <footer>
         <p>dev.finance$</p>
+        
     </footer>
+   
 
 
 
